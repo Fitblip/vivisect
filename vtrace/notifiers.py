@@ -67,8 +67,8 @@ class VerboseNotifier(Notifier):
         elif event == vtrace.NOTIFY_DETACH:
             print("vtrace.NOTIFY_DETACH")
         elif event == vtrace.NOTIFY_LOAD_LIBRARY:
-			print("vtrace.NOTIFY_LOAD_LIBRARY")
-			print("\tLoaded library %s" % trace.getMeta('LatestLibrary') )
+            print("vtrace.NOTIFY_LOAD_LIBRARY")
+            print("\tLoaded library %s" % trace.getMeta('LatestLibrary') )
         elif event == vtrace.NOTIFY_UNLOAD_LIBRARY:
             print("vtrace.NOTIFY_UNLOAD_LIBRARY")
         elif event == vtrace.NOTIFY_CREATE_THREAD:
@@ -79,6 +79,10 @@ class VerboseNotifier(Notifier):
             print("Thread exited - ThreadID: %d" % trace.getMeta("ExitThread", -1) )
         elif event == vtrace.NOTIFY_STEP:
             print("vtrace.NOTIFY_STEP")
+        elif event == vtrace.NOTIFY_DEBUG_PRINT:
+            print("vtrace.NOTIFY_DEBUG_PRINT")
+        elif event == vtrace.NOTIFY_MAX:
+            print("vtrace.NOTIFY_MAX")
         else:
             print "vtrace.NOTIFY_WTF_HUH?"
 
